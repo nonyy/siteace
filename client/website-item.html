@@ -1,0 +1,22 @@
+<template name="websiteItem">
+  <a href="{{url}}">{{title}}</a>
+  <br>
+  <a href="{{_id}}">
+    More...</a>
+  <br>
+  <p>
+      Created on: <em>{{dateFor createdOn 'll LT'}}</em>
+  </p>
+  <a href="#" class="btn btn-default js-upvote">
+    <span class="glyphicon glyphicon-arrow-up" style="color:{{getLikeIconColor}}" aria-hidden="true"></span>
+  </a>
+  <span class="btn viewer" style="color:{{getViewerColor}}" disabled>{{votes}}</span>
+
+  <a href="#" class="btn btn-default js-downvote">
+    <span class="glyphicon glyphicon-arrow-down" style="color:{{getUnlikeIconColor}}" aria-hidden="true"></span>
+  </a>
+
+  <br>
+  <br>
+  <!-- you will be putting your up and down vote buttons in here! -->
+</template>

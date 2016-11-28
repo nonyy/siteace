@@ -1,0 +1,26 @@
+/* CSS declarations go here */
+
+.hidden-div {
+    display: none;
+}
+
+.viewer {
+    background-color: white;
+    color: black;
+    border: 0px;
+    width: 40px;
+    font-weight: bold;
+}
+
+
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-dialog {
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}

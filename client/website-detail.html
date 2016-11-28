@@ -1,0 +1,31 @@
+<template name="websiteDetail">
+  <div class="container">
+    <h3>Click 'Home' to go back to the list of websites.</h3> <br>
+    <a href="{{url}}">{{title}}</a> <br>
+    <p>
+      {{description}}
+    </p>
+    <p>
+      <form class="js-comment-form">
+        <div class="form-group">
+          <label for="inputComment">Add a new Comment</label>
+          <input type="text" class="form-control" id="inputComment" placeholder="">
+        </div>
+        <button type="submit" class="btn btn-default">Post comment</button>
+      </form>
+    </p>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Comments</h3>
+      </div>
+      <!-- /col-sm-12 -->
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        {{#each comments}}
+          {{>comment}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

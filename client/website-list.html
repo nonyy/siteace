@@ -1,0 +1,86 @@
+<template name="websiteList">
+    <div class='container-fluid'>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <input id="search" type="text" class="form-control" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <div class='container'>
+        <div class="row">
+            {{#if currentUser}}
+                <h1>Hello
+                    {{username}}!</h1>
+            {{else}}
+                <h1>Login to fully enjoy the website.</h1>
+            {{/if}}
+        </div>
+        <div class="row">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" />
+          <a href="https://linkedin.com/in/nonyy">Created by Tomasz Hamerla (nonyy)</a> <br>
+        </a>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+          Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+          <p>
+            <strong>TL;DR</strong>: The license is very strict to not allow cheating on coursera. Either DIY or leave this site.
+            Docker-related content (including bundle.sh script) is licensed under The Unlicense.
+          </p>
+          <p>
+          </p>
+            <p>
+            <a href="https://github.com/nonyy/siteace">Source</a>
+            </p>
+        </div>
+        <div class='row'>
+            <h3>All challenges and tasks have been implemented. Explore them! :) </h3>
+
+            <button type='button' class="btn btn-md btn-primary js-see-more">See more...</button>
+
+            <div class="hidden-div" id="seeMore">
+                <br>
+                <p>-> Try the new website form with superb real-time url checking and auto-content getting functionality.</p>
+                <p>-> Try the real-time search panel working immediately... as you type.</p>
+                <p>-> Check out the 'recommended' functionality. Like (or comment...)
+                a website of one of those Texas universities (below) and see what'll be suggested.</p>
+                <p>-> Don't forget to comment a website and see the comment timestamp being updated in real time
+                    (provided you are patient enough to wait a few minutes looking at the website!).</p>
+                <p>-> Try getting through the security :)</p>
+                <h4>Click 'See more...' again to hide this content.</h4>
+            </div>
+             <br> <br>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-push-8">
+                <h2>Recommended website</h2>
+                <br>
+                {{#if currentUser}}
+                    {{#if getRecommended}}
+                        {{>websiteItem getRecommended}}
+                    {{else}}
+                        <p>
+                            Sorry. There's no website we can recommend.
+                            Probably you've liked/commented every website.
+                        </p>
+                    {{/if}}
+                {{else}}
+                    <p>
+                        Sorry, this functionality only works while logged in...
+                    </p>
+                {{/if}}
+                <br>
+                <br>
+            </div>
+            <div class="col-md-8 col-md-pull-4">
+                <ol>
+                    {{#each websites}}
+                        <li>
+                            {{>websiteItem}}
+                        </li>
+                    {{/each}}
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+</template>
